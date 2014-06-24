@@ -145,7 +145,8 @@ function stanford_slides_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_stanford_slide';
   $strongarm->value = array(
-    0 => 'status',
+    1 => 'moderation',
+    2 => 'revision',
   );
   $export['node_options_stanford_slide'] = $strongarm;
 
