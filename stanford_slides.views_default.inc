@@ -664,6 +664,13 @@ function stanford_slides_views_default_views() {
       'label' => '',
     ),
   );
+ /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'Row';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  $handler->display->display_options['fields']['counter']['reverse'] = 0;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_s_image_info']['id'] = 'field_s_image_info';
   $handler->display->display_options['fields']['field_s_image_info']['table'] = 'field_data_field_s_image_info';
@@ -790,6 +797,15 @@ function stanford_slides_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'stanford_slide' => 'stanford_slide',
   );
+  /* Filter criterion: Content: Author uid */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'node';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = '';
+  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author uid';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
